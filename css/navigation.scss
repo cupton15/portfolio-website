@@ -1,20 +1,33 @@
 $content-width: 1000px;
 $breakpoint: 799px;
-$nav-height: 70px;
-$nav-background: #262626;
+$nav-height: 50px;
+$nav-background: #1A1AA9;
 $nav-font-color: #ffffff;
 $link-hover-color: #2581DC;
 
 header {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   background-color: $nav-background;
   height: $nav-height;
+  padding: 0 0 0 30px;
+
+  h1 {
+    font-size: 1.6em;
+    margin: 0;
+    color: $nav-font-color;
+    line-height: $nav-height;
+    }
 
   nav {
-    padding: $nav-height 0 15px 0;
+    padding: $nav-height 0 0 0;
     flex: 1;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 80%;
+    height: 100%;
 
     .nav-mobile{
       position: absolute;
@@ -25,8 +38,8 @@ header {
 
       #nav-toggle {
         position: absolute;
-        left: 18px;
-        top: 22px;
+        left: ($nav-height - 30)/2;
+        top: ($nav-height - 26)/2;
         cursor: pointer;
         padding: 10px 35px 16px 0px;
         span,
@@ -35,7 +48,7 @@ header {
           cursor: pointer;
           border-radius: 1px;
           height: 5px;
-          width: 35px;
+          width: 30px;
           background: $nav-font-color;
           position: absolute;
           display: block;
@@ -67,6 +80,8 @@ header {
     ul {
       list-style-type: none;
       display: none;
+      background-color: $nav-background;
+      height: 100%;
 
       li {
         position: relative;
@@ -74,7 +89,11 @@ header {
         a {
           display: block;
           line-height: $nav-height;
-
+          background: $nav-background;
+          transition: 300ms all ease;
+          color: $nav-font-color;
+          text-decoration: none;
+          font-weight: 700;
         }
       }
     }
