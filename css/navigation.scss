@@ -1,18 +1,10 @@
-$padding: 6px;
+$content-width: 1000px;
+$breakpoint: 799px;
+$nav-height: 70px;
+$nav-background: #262626;
+$nav-font-color: #ffffff;
+$link-hover-color: #2581DC;
 
-nav {
-  ul {
-    margin: 0;
-    padding: $padding;
-    list-style: none;
-    border-bottom-color: red;
-  }
-
-  li { display: inline-block; }
-
-  a {
-    display: block;
-    padding: $padding 12px;
-    text-decoration: none;
-  }
+header {
+  background-color: $nav-background;
 }
