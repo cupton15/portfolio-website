@@ -21,4 +21,46 @@ body {
     height: 100%;
     min-height: 100%;
     text-rendering: optimizeLegibility;
+
+    .home-page {
+        background: url(../images/background.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100%;
+        color: white;
+        height: 100%;
+        font-size: 1.6em;
+    }
+
+    .typing-effect{
+        overflow: hidden;
+        margin: 0 auto; 
+        white-space: nowrap; 
+        letter-spacing: .15em;
+        animation: 
+            typing 2s steps(40, end),
+    }
+
+    .typing-effect::after {
+        content: '_';
+        margin-left: .15em;
+        font-size: 1.5em;
+        color: white;
+        animation: 
+            blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    @keyframes blink {
+        from, to { color: transparent }
+        50% { color: white; }
+    }
 }

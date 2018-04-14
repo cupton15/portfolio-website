@@ -1,7 +1,10 @@
 $content-width: 1000px;
 $breakpoint: 799px;
+@import "colors";
+
 $nav-height: 50px;
-$nav-background: #1A1AA9;
+$nav-background: $primary-color;
+$nav-secondary-background: $secondary-color;
 $nav-font-color: #ffffff;
 $link-hover-color: #2581DC;
 
@@ -10,6 +13,7 @@ header {
   flex-direction: column;
   text-align: left;
   background-color: $nav-background;
+  border-bottom: 1px solid rgba(0,0,0,.15);
   height: $nav-height;
   padding: 0 0 0 30px;
 
@@ -18,16 +22,11 @@ header {
     margin: 0;
     color: $nav-font-color;
     line-height: $nav-height;
+    font-weight: 550;
     }
 
   nav {
-    padding: $nav-height 0 0 0;
     flex: 1;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 80%;
-    height: 100%;
 
     .nav-mobile{
       position: absolute;
@@ -80,8 +79,14 @@ header {
     ul {
       list-style-type: none;
       display: none;
-      background-color: $nav-background;
+      background-color: $nav-secondary-background;
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 80%;
       height: 100%;
+      margin: $nav-height 0 0 0;
+      text-align: center;
 
       li {
         position: relative;
@@ -89,7 +94,6 @@ header {
         a {
           display: block;
           line-height: $nav-height;
-          background: $nav-background;
           transition: 300ms all ease;
           color: $nav-font-color;
           text-decoration: none;
