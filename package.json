@@ -2,10 +2,12 @@
   "name": "portfolio-website",
   "version": "1.0.0",
   "description": "My portfolio site detailing my work &amp; interests",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "gulp-rename": "^1.2.2"
   },
   "scripts": {},
   "repository": {
