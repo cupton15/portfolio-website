@@ -29,7 +29,7 @@ body {
         vertical-align: middle;
         line-height: 100%;
         color: white;
-        height: calc(100% - #{$nav-height});
+        height: calc(100vh - #{$nav-height});
         font-size: 1.3em;
         display: flex;
         align-items: center;
