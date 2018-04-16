@@ -1,7 +1,8 @@
-$content-width: 1000px;
+@import "mixins";
 @import "colors";
 @import "variables";
 
+$content-width: 1000px;
 $nav-height: 50px;
 $nav-background: $primary-color;
 $nav-secondary-background: $secondary-color;
@@ -10,12 +11,16 @@ $link-hover-color: #2581DC;
 
 header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: left;
   background-color: $nav-background;
   border-bottom: 1px solid rgba(0,0,0,.15);
   height: $nav-height;
   padding: 0 0 0 30px;
+
+  @include respond-to(mobile) {
+    flex-direction: column;
+  }
 
   h1 {
     font-size: 1.6em;
@@ -24,82 +29,108 @@ header {
     line-height: $nav-height;
     font-weight: 550;
     }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin: 0 50px;
 
+    li {
+      position: relative;
+
+      a {
+        display: block;
+        padding: 0 20px;
+        line-height: $nav-height;
+        background: $nav-background;
+        color: $nav-font-color;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 300ms all ease;
+
+        &:hover {
+          background-color:$nav-secondary-background;
+        }
+      }
+    }
+  }
+  
   nav {
     flex: 1;
 
-    .nav-mobile{
-      position: absolute;
-      right: 0;
-      top:0;
-      height: $nav-height;
-      width: $nav-height;
-
-      #nav-toggle {
-        position: absolute;
-        left: ($nav-height - 30)/2;
-        top: ($nav-height - 26)/2;
-        cursor: pointer;
-        padding: 10px 35px 16px 0px;
-        span,
-        span:before,
-        span:after {
-          cursor: pointer;
-          border-radius: 1px;
-          height: 5px;
-          width: 30px;
-          background: $nav-font-color;
-          position: absolute;
-          display: block;
-          content: '';
-          transition: all 300ms ease-in-out;
-        }
-        span:before {
-          top: -10px;
-        }
-        span:after {
-          bottom: -10px;
-        }
-        &.active span {
-          background-color: transparent;
-          &:before,
-          &:after {
-            top: 0;
-          }
-          &:before {
-            transform: rotate(45deg);
-          }
-          &:after {
-            transform: rotate(-45deg);
-          }
-        }
+    @media screen and (min-width: $break-large) {
+      .nav-list {
+        display: flex !important;
       }
     }
 
-    ul {
-      list-style-type: none;
-      display: none;
-      background-color: $nav-secondary-background;
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 70%;
-      height: 100%;
-      margin: $nav-height 0 0 0;
-      text-align: center;
+    @include respond-to(mobile) {
+      .nav-mobile{
+        position: absolute;
+        right: 0;
+        top:0;
+        height: $nav-height;
+        width: $nav-height;
 
-      li {
-        position: relative;
+        #nav-toggle {
+          position: absolute;
+          left: ($nav-height - 30)/2;
+          top: ($nav-height - 26)/2;
+          cursor: pointer;
+          padding: 10px 30px 16px 0px;
+          span,
+          span:before,
+          span:after {
+            cursor: pointer;
+            border-radius: 1px;
+            height: 5px;
+            width: 30px;
+            background: $nav-font-color;
+            position: absolute;
+            display: block;
+            content: '';
+            transition: all 300ms ease-in-out;
+          }
+          span:before {
+            top: -10px;
+          }
+          span:after {
+            bottom: -10px;
+          }
+          &.active span {
+            background-color: transparent;
+            &:before,
+            &:after {
+              top: 0;
+            }
+            &:before {
+              transform: rotate(45deg);
+            }
+            &:after {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+
+      ul {
+        list-style-type: none;
+        display: none;
+        background-color: $nav-secondary-background;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 70%;
+        height: 100%;
+        margin: $nav-height 0 0 0;
+        text-align: center;
 
         a {
-          display: block;
-          line-height: $nav-height;
-          transition: 300ms all ease;
-          color: $nav-font-color;
-          text-decoration: none;
-          font-weight: 700;
+          background-color: $nav-secondary-background;
         }
       }
-    }
+    }   
   }
 }
