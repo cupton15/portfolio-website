@@ -1,6 +1,6 @@
 $content-width: 1000px;
-$breakpoint: 799px;
 @import "colors";
+@import "variables";
 
 $nav-height: 50px;
 $nav-background: $primary-color;
@@ -83,7 +83,7 @@ header {
       position: fixed;
       right: 0;
       top: 0;
-      width: 80%;
+      width: 70%;
       height: 100%;
       margin: $nav-height 0 0 0;
       text-align: center;

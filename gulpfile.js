@@ -6,7 +6,8 @@ var rename = require('gulp-rename')
 gulp.task('sass', function() {
     gulp.src('./css/*.scss')
         .pipe(sass({outputStyle: 'compressed'}))
-        .on('error', function(){
+        .on('error', function(err){
+            console.log(err)
             this.emit('end')
         })
         .pipe(rename({ extname: '.min.css' }))
