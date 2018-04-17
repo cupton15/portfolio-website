@@ -17,6 +17,8 @@ header {
   border-bottom: 1px solid rgba(0,0,0,.15);
   height: $nav-height;
   padding: 0 0 0 30px;
+  color: $nav-font-color;
+  font-weight: 700;
 
   @include respond-to(mobile) {
     flex-direction: column;
@@ -45,10 +47,9 @@ header {
         padding: 0 20px;
         line-height: $nav-height;
         background: $nav-background;
-        color: $nav-font-color;
         text-decoration: none;
-        font-weight: 700;
         transition: 300ms all ease;
+        color: $nav-font-color;
 
         &:hover {
           background-color:$nav-secondary-background;
@@ -115,22 +116,48 @@ header {
         }
       }
 
-      ul {
-        list-style-type: none;
+      .nav-container {
         display: none;
         background-color: $nav-secondary-background;
         position: fixed;
         right: 0;
         top: 0;
         width: 70%;
-        height: 100%;
+        height: calc(100% - #{$nav-height});
         margin: $nav-height 0 0 0;
         text-align: center;
+        padding: 10px;
+      }
 
-        a {
-          background-color: $nav-secondary-background;
+      .nav-list {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+  
+        .external-links {
+          a {
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+          }
+
+          svg {
+            margin-right: 10px;
+            height: 32px;
+            width: 32px;
+          }
+        }
+  
+        ul {
+          list-style-type: none;
+          display: block;
+  
+          a {
+            background-color: $nav-secondary-background;
+          }
         }
       }
-    }   
+    }  
   }
 }
