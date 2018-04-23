@@ -15,9 +15,10 @@ header {
   text-align: left;
   border-bottom: 1px solid rgba(0,0,0,.15);
   height: $nav-height;
-  padding: 10px 0 0 30px;
+  padding: 0 0 0 30px;
   color: $nav-font-color;
   font-weight: 700;
+  cursor: default;
 
   @include respond-to(mobile) {
     flex-direction: column;
@@ -29,6 +30,7 @@ header {
     color: $nav-font-color;
     font-weight: 700;
     line-height: $nav-height;
+    user-select: none;
     }
   
   ul {
