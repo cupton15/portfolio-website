@@ -5,7 +5,7 @@
     "tasks": [
         {
             "type": "gulp",
-            "task": "dafault",
+            "task": "default",
             "problemMatcher": []
         }
     ],
