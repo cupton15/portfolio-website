@@ -48,9 +48,9 @@ header {
   nav {
     flex: 1;
 
-    @media screen and (min-width: $break-small) {
+    @media screen and (min-width: $break-large) {
       .nav-container {
-        display: flex;
+        display: flex !important;
       }
     }
 
