@@ -3,7 +3,7 @@ $(document).ready(function() {
         $('.content').css('display', 'none');
         $('.content').fadeIn(500);
 
-        if($('#nav-toggle').is(':visible')){
+        if(!$('#nav-toggle').is(':hidden')){
             $('#nav-toggle').toggleClass('active');
             $('nav .nav-container').hide('slide', { direction: 'right'}, 500);   
         }
