@@ -25,7 +25,6 @@ body {
     background: url("../images/black-blue-abstract.jpg");
     background-size: cover;
     background-position: right top;
-    overflow: scroll;
 
     .content {
         text-align: center;     
@@ -39,6 +38,10 @@ body {
         height: calc(100vh - #{$nav-height});
         overflow: scroll;
 
+        h1 {
+            font-size: 1.5em;
+        }
+
         p#home {
             color: white;
             line-height: calc(100vh - #{$nav-height});  
@@ -49,6 +52,7 @@ body {
             width: 100%;
             margin: auto;
             height: calc(100vh - #{$nav-height});
+            padding: 10px;
             box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
 
             @include respond-to(wide-screens) {
@@ -79,6 +83,9 @@ body {
             animation: 
                 blink .75s step-end infinite;
         }
+    }
+
+    @include respond-to(mobile){
     }
 
     @keyframes typing {

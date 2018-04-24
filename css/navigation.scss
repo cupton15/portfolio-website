@@ -75,9 +75,14 @@ header {
           display: none;
         }
 
-        &:hover {
-          .nav-text {
-            display: block;
+        @include respond-to(wide-screens) {
+          &:hover {
+            max-width: 500px;
+            transition: max-width 0.25s ease-in;
+
+            .nav-text {
+              display: block;
+            }
           }
         }
 
@@ -149,6 +154,10 @@ header {
         margin: $nav-height 0 0 0;
         text-align: center;
         padding: 10px;
+
+        @include respond-to(medium-screens){
+          width: 50%;
+        }
       }
 
       .nav-list {
