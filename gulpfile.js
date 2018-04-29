@@ -2,6 +2,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename')
+var prefix = require('gulp-autoprefixer')
 
 gulp.task('sass', function() {
     gulp.src('./css/*.scss')
@@ -10,6 +11,10 @@ gulp.task('sass', function() {
             console.log(err)
             this.emit('end')
         })
+        .pipe(prefix({
+            browsers: ['last 99 versions'],
+            cascade: false
+        }))
         .pipe(rename({ extname: '.min.css' }))
         .pipe(gulp.dest('./css/'))
 });

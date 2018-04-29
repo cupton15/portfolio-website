@@ -29,7 +29,6 @@ body {
 
     .content {
         text-align: center;     
-        font-size: 1.3em;
         color: $secondary-color;
         display: block;
         align-items: center;
@@ -43,30 +42,37 @@ body {
             font-size: 1.5em;
         }
 
-        p#home {
+        #home {
             color: white;
-            line-height: calc(100vh - #{$nav-height});  
+            font-size: 1.2em;
+            height: calc(100vh - #{$nav-height});  
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
 
         .article {
-            background: white;
             width: 100%;
+            color: white;
             margin: auto;
             height: auto;
             text-align: left;
-            padding: 5px 20px 10px 20px;
+            padding: 40px;
+            background-color: $secondary-color;
+            background: rgba(0,5,30, 0.8);
 
             .sub-title{
                 font-size: 1.2em;
                 font-weight: 500;
                 width: 100%;
-                margin-bottom: 20px;
-                border-bottom: 2px $secondary-color solid;
+                margin: 20px 0;
+                border-bottom: 2px white solid;
             }
 
             h1 {
                 padding-left: 5px;
-                border-bottom: $secondary-color 3px solid;
+                border-bottom: white 3px solid;
                 margin-bottom: 30px;
             }   
             
@@ -74,12 +80,17 @@ body {
                 margin: 10px 0;
             }
 
+            li {
+                margin: 10px 0 10px 10px;;
+            }
+
             &:not(:last-child){
                 margin-bottom: 20px;
             }
 
             @include respond-to(wide-screens) {
-                width: 80%;
+                max-width: 1024px;
+                padding: 40px 60px;
             }
 
             @include respond-to(mobile) {
@@ -99,15 +110,24 @@ body {
         margin: 0 auto; 
         white-space: nowrap; 
         letter-spacing: .15em;
-        animation: 
-            typing 3.5s steps(50, end);
+        animation: typing 3.5s steps(60, end);
 
         @include respond-to(mobile){
             animation: 
                 typing 2.5s steps(40, end);
-        }        
+        } 
+        
+        &:nth-child(2) {
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            width: 0;
 
-        &:after {
+            @include respond-to(mobile){
+                animation-delay: 1.5s;
+            }
+        }
+
+        &:last-child:after {
             content: '_';
             margin-left: .15em;
             font-size: 1.5em;
