@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    $('.no-fouc').removeClass('no-fouc')
+    
     $('.nav-link').on('click', function(){
         $('.content').css('display', 'none');
         $('.content').fadeIn(500);
