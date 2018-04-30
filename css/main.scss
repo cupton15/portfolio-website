@@ -67,7 +67,9 @@ body {
             background: rgba(0,5,30, 0.8);
 
             .section {
-                min-height: calc(100vh - #{$nav-height}); 
+                margin-top: 20px;
+                padding-bottom: 20px;
+
             }
 
             .sub-title{
