@@ -1,14 +1,6 @@
 @import "colors";
 @import "mixins";
 
-@include respond-to(mobile){
-    .section#skills {
-        h1 {
-        margin: 0;
-        }
-    }
-}
-
 .icon-list {
     display: flex;
     flex-direction: row;
