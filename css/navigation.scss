@@ -72,16 +72,17 @@ header {
         cursor: pointer;
 
         .nav-text {
-          display: none;
+          width: 0;
+          overflow: hidden;
+          transition: width 0.25s ease-in;
         }
 
         @include respond-to(wide-screens) {
           &:hover {
-            max-width: 500px;
-            transition: max-width 0.25s ease-in;
+            color: #0032E1;
 
             .nav-text {
-              display: block;
+              width: 60px;
             }
           }
         }
@@ -172,7 +173,7 @@ header {
             align-items: center;
 
             .nav-text {
-              display: block;
+              width: auto;
             }
         }
           
